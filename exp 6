@@ -1,0 +1,85 @@
+import java.io.*;
+import java.util.*;
+class Candle
+{
+    String color;
+    int height,price;
+  
+    String getcolor()
+    {
+        return color;
+    }
+    int getheight()
+    {
+        return this.height;
+    }
+    int getprice()
+    {
+        return this.price;
+    }
+    
+    void setcolor(String color)
+    {
+        this.color=color;
+    }
+    void setheight(int height)
+    {
+        this.height=height;
+        this.price=2*height;
+    }
+
+}
+
+class ScentedCandle extends Candle{
+
+    String scent;
+    
+     String getscent()
+    {
+        return this.scent;
+    }
+    
+    void setscent(String scent)
+    {
+        this.scent=scent;
+    }
+    void setheight(int height)
+    {
+        this.price=height*3;
+    }
+}
+public class Solution
+{
+    
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+   Scanner sc=new Scanner(System.in);
+        
+        Candle ob1=new Candle();
+        ScentedCandle ob2=new ScentedCandle();
+        
+        String clr=sc.nextLine();
+        int hgt=sc.nextInt();
+        sc.nextLine();
+        String scn=sc.nextLine();
+        
+        
+        ob1.setcolor(clr);
+        ob1.setheight(hgt);
+        ob2.setscent(scn);
+        ob2.setheight(hgt);
+       
+            /* Candle Color is: Yellow
+Candle Height is: 12
+Price is: 24
+Scented candle name is: Engage
+Scented candle Price is: 36*/
+        
+        System.out.println("Candle Color is: "+ob1.getcolor()
+                           +"\nCandle Height is: "+ob1.getheight()
+                           +"\nPrice is: "+ob1.getprice()
+                           +"\nScented candle name is: "+ob2.getscent()
+                          +"\nScented candle Price is: "+ob2.getprice());
+        
+    }
+}
